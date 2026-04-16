@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎀 Spesial untuk Nadya 🎀</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animasi bintang */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: twinkle 2s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .greeting {
+            font-size: 1.8em;
+            color: #ff6b9d;
+            margin-bottom: 30px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Loading Style (The "Gong" Effect) */
+        #loader {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .heart-loader {
+            width: 50px;
+            height: 50px;
+            background-color: #ff6b9d;
+            transform: rotate(45deg);
+            animation: heartBeatLoader 1.2s infinite;
+            margin: 20px;
+            position: relative;
+        }
+
+        .heart-loader::before, .heart-loader::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background-color: #ff6b9d;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart-loader::before { left: -25px; }
+        .heart-loader::after { top: -25px; }
+
+        @keyframes heartBeatLoader {
+            0% { transform: rotate(45deg) scale(0.8); }
+            5% { transform: rotate(45deg) scale(0.9); }
+            10% { transform: rotate(45deg) scale(0.8); }
+            15% { transform: rotate(45deg) scale(1); }
+            50% { transform: rotate(45deg) scale(0.8); }
+            100% { transform: rotate(45deg) scale(0.8); }
+        }
+
+        .loading-text {
+            color: #ff6b9d;
+            font-weight: 600;
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 10px 20px rgba(255, 107, 157, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 107, 157, 0.4);
+        }
+
+        .success-message {
+            font-size: 1.4em;
+            line-height: 1.6;
+            color: #333;
+            padding: 20px;
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-radius: 20px;
+            border-left: 5px solid #ff6b9d;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .heart {
+            font-size: 1.5em;
+            color: #ff6b9d;
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.3); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.3); }
+            70% { transform: scale(1); }
+        }
+
+        .hidden { display: none !important; }
+
+        @media (max-width: 480px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <h1>🎀 halooo 🎀</h1>
+        
+        <div id="step1">
+            <div class="greeting">For my favorite <span>person ✨</span></div>
+            <p style="color: #666; margin-bottom: 30px;">There is a special message for you</p>
+            <button class="btn" onclick="startGong()">lanjuutt <span class="heart">💖</span></button>
+        </div>
+
+        <div id="loader">
+            <div class="heart-loader"></div>
+            <div class="loading-text">Tunggu sebentar yaa cantik...</div>
+        </div>
+
+        <div id="step2" class="hidden">
+            <div class="success-message">
+                <span class="heart">💖</span> 
+                <strong>Halo Nadyaaa</strong><br><br>
+                I just want to say, TADIII PENAMPILAN LU KEREEENNN BANGEEETTTTT NATTTTTTT, you look so beautifuuuullll, so gracefuuull, <strong>and you looks absolutely amazingg natt</strong>!<br>
+                Sumpah gua sampe terpana tau natt liat lu tadii😭, hati kecil gua kayak teriak "CEWE GUA CANTIK BANGET ANJIRRRR", gua ampe salting salting sendiri tauu natt😭.<br>
+                Bener kan natt, semua yang lu lakuin ga ada yang sia sia,,,, mulai dari dekor sl yang kerja rodi sampe tengah malem...bahkan ampe jam 1 pagii, coba aja liat hasilnyaa, gua yakin semua orang yang liat pasti bakalan bilang "keren bangeett, bagus banget, indah bangett", tapi mereka gatau kalau sosok dibalik " keindahan & kecantikan" dekor sl justru jauuuhhhh lebih cantikk dari dekor yang mereka liatt. Dan latihan lu berhari-hari buat umbrella dance juga sukses besarr natt, gua yakinnn bangeettt kalo semua orang yang nonton umbrella dance pasti bakalan muji gila gilaan dalem hati maupun langsung natt, karena emang  <strong>se-gong ituu penampilannyaa.</strong>
+                Terakhir, mungkin lu bakalan bosen denger ini mulu, but I am VERY VERY VERY PROUD OF YOU NATTT. congratulations yaaaaaaaa, minggu ini lu udah ngelewatin hal yang pasti beraaattt bangeett buat dilakuin natt, mulai dari banyaknya tugass, kegiatan stukol yang walaupun seru tapi pasti nguras tenaga bangett, sampe dekor + latihan penampilan yang gila gilaan nyiapinnya, bahkan sampe tidur laruttt bangett hampir tiap malemnya. 
+                <br> Tapi yang gua paling suka dari diri lu di minggu inii, dengan banyakk bangett kegiatan, tugas, beban pikiran, dan banyak hal lainnya.... lu tetep ngelakuin semuanya dengan senyum nat, dan itu woww banget tauuu, gua bisa liat dari mata sama muka lu kalo lu tuh kecapean bangett😭, tapii bisa bisanya lu tetep senyum ke semua orang cobaa???, rasanya kayak...(kalo kita muhrim ya)...I want to give you a hug and tell you that you can vent all your frustrations or whatever it is to me, just to me. jangan pernah segan jadiin gua tempat curhat yaa natt, gapapaa kalo di depan orang lain lu harus keliatan kuaat, but when you're with me, you're free to be yourself, I'll never judge you or hate you, never.<br>
+                <span class="heart"></span> oke ini beneran terakhir, gua mau bilang kalo I love you so, so, so much, my little girl. Thank you for always brightening my days, I’m so lucky to have you in my life. teruss semangaat dan selalu lakukan hal positif yaaaaaa, semoga web yang gua bikin dan kata kata ini bisa bikin semangat lu balik lagi yaaaa, sorry kalau terlalu biasa bangeet😭 <span class="heart"></span><br><br>
+                with endless love, <strong>your favorite person 💖</strong>
+                <span class="heart"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 2 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        function startGong() {
+            // Sembunyikan bagian awal
+            document.getElementById('step1').classList.add('hidden');
+            
+            // Tampilkan loader (Efek Gong)
+            const loader = document.getElementById('loader');
+            loader.style.display = 'flex';
+
+            // Tunggu 2.5 detik, lalu tampilkan pesan akhir
+            setTimeout(() => {
+                loader.style.display = 'none';
+                document.getElementById('step2').classList.remove('hidden');
+            }, 2500);
+        }
+
+        window.onload = createStars;
+    </script>
+</body>
+</html>
